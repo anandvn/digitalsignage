@@ -1,0 +1,27 @@
+{% load static %}
+<html>
+    <head>
+        <title>Wood Prices</title>
+        <link rel=stylesheet type="text/css"
+                     href="{% static 'web/css/menu.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <script type="text/javascript" src={% static 'web/js/pagination.js' %}></script>
+        <div id="table-wrapper">
+        <table width=100% class="menu">
+            <tr><td colspan=3 style="text-align: center;"><img alt="header" src="{% static 'web/img/header.png' %}"></td></tr>
+            {% if item_list %}
+                {% for item in item_list %}
+                <tr><td>{{ item.id }}</td><td>{{ item.desc }}</td><td>${{ item.price }}/BF</td></tr>
+                {% endfor %}
+            {% else %}
+                <tr><td colspan=3>No Prices available</td></tr>
+            {% endif %}
+        </table>
+        </div>
+    </body>
+</html>
+

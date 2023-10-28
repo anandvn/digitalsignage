@@ -1,0 +1,45 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+        .container {
+            margin: 10% auto;
+            max-width: 400px;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #e74c3c;
+        }
+        p {
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Oops! Page Not Found</h1>
+        <p>Sorry, it looks like you've taken a wrong turn.</p>
+        <p>Don't worry, though. You can <a href="/">go back to the home page</a> or try searching for what you're looking for.</p>
+        <img src="{% static 'web/img/404.png' %}" alt="Lost" width="400">
+    </div>
+</body>
+</html>
+
