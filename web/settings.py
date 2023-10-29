@@ -29,7 +29,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['mywoodcraft.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['mywoodcraft-38483c0f64e1.herokuapp.com', 'localhost']
 
 
 # Application definition
