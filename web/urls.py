@@ -22,4 +22,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('<int:store>', views.index, name='index'),
     path('', views.landing, name='landing'),
+    path('dadjoke', views.dadjoke, name='dadjoke'),
 ]

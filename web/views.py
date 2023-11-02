@@ -3,8 +3,8 @@ from django.template import loader
 import csv
 from web.models import ItemsFile
 import os.path
-from decouple import config
 import io
+import urllib.request
 
 def index(request, store=0):
     query = ItemsFile.objects.filter(store=store)
@@ -28,4 +28,14 @@ def landing(request):
     template = loader.get_template("web/404.html")
     context = { }
     return HttpResponse(template.render(context, request))
+
+def dadjoke(request):
+    url = "https://icanhazdadjoke.com/"
+    hdr = { 'User-Agent' : 'mywoodcraft.com (https://github.com/anandvn/digitalsignage)' , 'Accept' : 'text/plain' }
+    req = urllib.request.Request(url, headers=hdr)
+    resp = urllib.request.urlopen(req)
+    context = { 'dad_joke' : resp.read().decode() }
+    template = loader.get_template("web/dadjoke.html")
+    return HttpResponse(template.render(context, request))
+    
 

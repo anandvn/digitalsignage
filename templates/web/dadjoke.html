@@ -1,0 +1,43 @@
+{% load static %}
+<html>
+    <head>
+        <title>Dad Joke</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Butterfly+Kids&display=swap" rel="stylesheet">
+        <style>
+            body { background-image: url("{% static 'web/img/dadjoke.jpg' %}"); }
+            table.menu {
+                font-family: 'Butterfly Kids', cursive;
+                font-size: 8vw;
+                color: white;
+                margin: 0px;           
+            }
+            #table-wrapper {
+            	height: 900px;
+	            width: 1920px;
+	            padding: 0px;
+	            margin: 150px 0px 0px 0px;
+	            overflow: auto;
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <div id="table-wrapper">
+        <table class="menu">
+            <tr height="50%"><td colspan=2></td></tr>
+            <tr height="50%"><td width="40%"></td>
+                <td width="60%">
+                    {% if dad_joke %}
+                        {{ dad_joke }}
+                    {% else %}
+                        Why are giraffes so slow to apologize? Because it takes them a long time to swallow their pride.
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+        </div>
+    </body>
+</html>

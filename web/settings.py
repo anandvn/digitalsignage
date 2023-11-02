@@ -31,9 +31,14 @@ DEBUG = config("DEBUG", cast=bool)
 
 ALLOWED_HOSTS = ['mywoodcraft-38483c0f64e1.herokuapp.com', 'localhost']
 
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE=True
-CSRF_COOKIE_SECURE=True
+if DEBUG:
+    SECURE_SSL_REDIRECT = False
+    SESSION_COOKIE_SECURE=False
+    CSRF_COOKIE_SECURE=False
+else:
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE=True
+    CSRF_COOKIE_SECURE=True
 
 # Application definition
 
