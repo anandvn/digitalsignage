@@ -43,8 +43,10 @@ def hotbuy(request, store=0):
     query = HotItem.objects.filter(store=store)
     if query.count() == 0:
         return landing(request)
-    print(str(query[0]))
-    context = { 'hot_buy' : query[0] }
-    template = loader.get_template("web/hotbuy.html")
-    return HttpResponse(template.render(context, request))
+    try:
+        context = { 'hot_buy' : query[0] }
+        template = loader.get_template("web/hotbuy.html")
+        return HttpResponse(template.render(context, request))
+    except:
+        return landing(request)
         
