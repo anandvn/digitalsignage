@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.template import loader
 import csv
 from web.models import ItemsFile
+from web.models import HotItem
 import os.path
 import io
 import urllib.request
@@ -38,4 +39,11 @@ def dadjoke(request):
     template = loader.get_template("web/dadjoke.html")
     return HttpResponse(template.render(context, request))
     
-
+def hotbuy(request, store=0):
+    query = HotItem.objects.filter(store=store)
+    if query.count() == 0:
+        return landing(request)
+    context = { 'hot_buy' : hotbuy }
+    template = loader.get_template("web/hotbuy.html")
+    return HttpResponse(template.render(context, request))
+        

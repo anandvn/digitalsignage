@@ -23,4 +23,5 @@ urlpatterns = [
     path('<int:store>', views.index, name='index'),
     path('', views.landing, name='landing'),
     path('dadjoke', views.dadjoke, name='dadjoke'),
+    path('<int:store>/hotbuy', views.hotbuy, name='hotbuy'),
 ]

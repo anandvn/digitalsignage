@@ -356,3 +356,5 @@ pyrightconfig.json
 
 # Start of my stuff
 datadump.json
+.vscode
+./static/
