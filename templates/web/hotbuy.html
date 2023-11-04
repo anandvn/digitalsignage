@@ -16,11 +16,12 @@
         <table width=100% class="hotbuy">
             <tr><td colspan=2 style="text-align: center;"><img alt="header" src="{% static 'web/img/hot_item_header.png' %}"></td></tr>
             <tr>
-                <td rowspan="3"><img src="{{ hot_buy.image.url }}" style="height: 800px;"/></td>
+                <td rowspan="4"><img src="{{ hot_buy.image.url }}" style="height: 800px;"/></td>
                 <td>{{ hot_buy.description }}</td>
             </tr>
             <tr><td>Regular Price: ${{ hot_buy.reg_price }}</td></tr>
             <tr><td style="font-family: Knewave; font-size: 6vw; overflow: hidden; color: yellow">Sale Price: ${{ hot_buy.sale_price }}</td></tr>
+            <tr><td style="font-size: 1vw; text-align: left;" >{{ hot_buy.item_num }}</td></tr>
         </table>
         </div>
     </body>

@@ -9,10 +9,10 @@ table.menu {
 }
 
 #table-wrapper {
- 	height: 900px;
-	width: 1920px;
+  width: 1900px;
+ 	height: 1060px;
 	padding: 0px;
-	margin: 40px;
+	margin: 0px 0px 0px 0px;
 	overflow: auto;
 }
 

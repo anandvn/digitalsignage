@@ -18,5 +18,5 @@ class HotItem(models.Model):
     image = models.FileField(upload_to='images')
 
     def __str__(self):
-        return str(self.store) + ': ' + str(self.item_num)
+        return str(self.store) + ': ' + str(self.item_num) + ' ' + str(self.description) 
     
