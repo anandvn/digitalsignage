@@ -1,4 +1,5 @@
 {% load static %}
+{% load humanize %}
 <html>
     <head>
         <title>Wood Prices</title>
@@ -18,7 +19,7 @@
             <tr><td colspan=3 style="text-align: center;"><img alt="header" src="{% static 'web/img/header.png' %}"></td></tr>
             {% if item_list %}
                 {% for item in item_list %}
-                <tr><td>{{ item.id }}</td><td>{{ item.desc }}</td><td>${{ item.price }}/BF</td></tr>
+                <tr><td>{{ item.id }}</td><td>{{ item.desc }}</td><td>${{ item.price|floatformat:2|intcomma }}/BF</td></tr>
                 {% endfor %}
             {% else %}
                 <tr><td colspan=3>No Prices available</td></tr>
