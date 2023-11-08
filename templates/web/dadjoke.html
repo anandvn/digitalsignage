@@ -6,18 +6,19 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Butterfly+Kids&display=swap" rel="stylesheet">
         <style>
-            body { background-image: url("{% static 'web/img/dadjoke.jpg' %}"); }
+            body { background-image: url("{% static 'web/img/chalkboard.jpg' %}"); }
             table.menu {
                 font-family: 'Butterfly Kids', cursive;
-                font-size: 8vw;
+                font-size: 7vw;
                 color: white;
-                margin: 0px;           
+                margin: 50px 80px 20px 20px; 
+                text-align: justify; 
             }
             #table-wrapper {
-            	height: 900px;
-	            width: 1920px;
+            	height: 1000px;
+	            width: 1900px;
 	            padding: 0px;
-	            margin: 150px 0px 0px 0px;
+	            margin: 0px 0px 0px 0px;
 	            overflow: auto;
             }
 
@@ -27,16 +28,15 @@
     <body>
         <div id="table-wrapper">
         <table class="menu">
-            <tr height="50%"><td colspan=2></td></tr>
-            <tr height="50%"><td width="40%"></td>
-                <td width="60%">
-                    {% if dad_joke %}
-                        {{ dad_joke }}
-                    {% else %}
-                        Why are giraffes so slow to apologize? Because it takes them a long time to swallow their pride.
-                    {% endif %}
-                </td>
-            </tr>
+            <tr><td><img alt="header" src="{% static 'web/img/kids.png' %}"></td></tr>
+            <tr>                
+                <td>
+                {% if dad_joke %}
+                    {{ dad_joke }}
+                {% else %}
+                    Why are giraffes so slow to apologize? Because it takes them a long time to swallow their pride.
+                {% endif %}
+                </td>         </tr>
         </table>
         </div>
     </body>
